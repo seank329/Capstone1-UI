@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin:0;
+    height:100%;
+}
+
+.userChoices{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    justify-content: center;
+    text-align: center;
+}
+
+button{
+    width:30vw;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    margin-bottom:5%;
+}

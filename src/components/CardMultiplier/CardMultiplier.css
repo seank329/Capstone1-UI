@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    margin: 0;
+    height:100%;
+    width:100%;
+}
+
+.cardsArray{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}

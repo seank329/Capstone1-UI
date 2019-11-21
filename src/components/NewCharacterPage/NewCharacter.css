@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+
+.newCharacterScreen{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:5%;
+    text-align: center;
+}

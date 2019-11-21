@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+
+.experienceLevelScreen{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:5%;
+    text-align: center;
+}
