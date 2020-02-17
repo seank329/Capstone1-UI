@@ -29,6 +29,7 @@ class PlayerStats extends React.Component {
             setTimeout(()=>{ 
                 MemoryApiService.getPlayerStats(this.context.playerName)
                 .then(data => {
+                    data ? 
                     this.setState({
                         name:data.player_name,
                         totalGames:data.games_played,
@@ -38,7 +39,7 @@ class PlayerStats extends React.Component {
                         medium:data.quickest_game_played_medium,
                         hard:data.quickest_game_played_hard,
                         expert:data.quickest_game_played_expert,
-                    })
+                    }) : console.log('No data to report')
                 })
 
             },600)
