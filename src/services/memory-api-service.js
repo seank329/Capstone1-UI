@@ -97,6 +97,7 @@ const MemoryApiService = {
     },
 
     getPlayerStats(player){
+        try{
         return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${player}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
@@ -107,10 +108,9 @@ const MemoryApiService = {
             ?res.json().then(e => Promise.reject(e))
             :res.json()
             )
-        .then(res=>
-            (!res.json())
-            ? res.status(204) : res.json() 
-        ) 
+        }catch(error){
+           console.log(error)
+        }
     },
 
     getHighScoresBeginner(){
