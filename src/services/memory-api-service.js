@@ -107,7 +107,10 @@ const MemoryApiService = {
             ?res.json().then(e => Promise.reject(e))
             :res.json()
             )
-        .end()   
+        .then(res=>
+            (!res.json())
+            ? res.status(204) : res.json() 
+        ) 
     },
 
     getHighScoresBeginner(){
