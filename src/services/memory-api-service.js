@@ -3,7 +3,7 @@ import config from '../config.js'
 
 const MemoryApiService = {
     postGamesPlayed(id) {
-        return fetch(`${config.API_ENDPOINT}/memory-general/games_played/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/games_played/${id}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -16,7 +16,7 @@ const MemoryApiService = {
     },
 
     setupNewPlayer(id){
-        return fetch(`${config.API_ENDPOINT}/memory-general/setup/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/setup/${id}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -29,7 +29,7 @@ const MemoryApiService = {
     },
 
     getQuickTime(id, level){
-        return fetch(`${config.API_ENDPOINT}/memory-general/get_quickest_time/${id}/${level}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/get_quickest_time/${id}/${level}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -43,7 +43,7 @@ const MemoryApiService = {
 
     postQuickestGame(id, level, time){
         let experienceLevel = level.toLowerCase()
-        return fetch(`${config.API_ENDPOINT}/memory-general/post_quickest`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/post_quickest`, {
             method: 'POST',
             headers:{
                 'content-type':'application/json',
@@ -64,7 +64,7 @@ const MemoryApiService = {
     },
 
     postTotalTimePlayed(time, id){
-        return fetch(`${config.API_ENDPOINT}/memory-general/total_time`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/total_time`, {
             method: 'POST',
             headers:{
                 'content-type':'application/json',
@@ -84,7 +84,7 @@ const MemoryApiService = {
     },
     
     getPlayerId(player){
-        return fetch(`${config.API_ENDPOINT}/users/get_id/${player}`, {
+        return fetch(`${config.API_ENDPOINT}/api/users/get_id/${player}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -97,7 +97,7 @@ const MemoryApiService = {
     },
 
     getPlayerStats(player){
-        return fetch(`${config.API_ENDPOINT}/memory-general/player_stats/${player}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${player}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -110,7 +110,7 @@ const MemoryApiService = {
     },
 
     getHighScoresBeginner(){
-        return fetch(`${config.API_ENDPOINT}/memory-general/high_scores/beginner`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/high_scores/beginner`, {
             // headers: { 
             //     'authorization':`bearer ${TokenService.getAuthToken()}`
             // },
@@ -122,7 +122,7 @@ const MemoryApiService = {
             )   
     },
     getHighScoresEasy(){
-        return fetch(`${config.API_ENDPOINT}/memory-general/high_scores/easy`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/high_scores/easy`, {
             // headers: { 
             //     'authorization':`bearer ${TokenService.getAuthToken()}`
             // },
@@ -134,7 +134,7 @@ const MemoryApiService = {
             )   
     },
     getHighScoresMedium(){
-        return fetch(`${config.API_ENDPOINT}/memory-general/high_scores/medium`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/high_scores/medium`, {
             // headers: { 
             //     'authorization':`bearer ${TokenService.getAuthToken()}`
             // },
@@ -146,7 +146,7 @@ const MemoryApiService = {
             )   
     },
     getHighScoresHard(){
-        return fetch(`${config.API_ENDPOINT}/memory-general/high_scores/hard`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/high_scores/hard`, {
             // headers: { 
             //     'authorization':`bearer ${TokenService.getAuthToken()}`
             // },
@@ -158,7 +158,7 @@ const MemoryApiService = {
             )   
     },
     getHighScoresExpert(){
-        return fetch(`${config.API_ENDPOINT}/memory-general/high_scores/expert`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/high_scores/expert`, {
             // headers: { 
             //     'authorization':`bearer ${TokenService.getAuthToken()}`
             // },
@@ -169,47 +169,6 @@ const MemoryApiService = {
             :res.json()
             )   
     },
-
-    
-    // getNames() {
-    //     return fetch(`${config.API_ENDPOINT}/memory-general`, {
-    //         headers: { 
-    //             'authorization':`bearer ${TokenService.getAuthToken()}`
-    //         },
-    //     })
-    //     .then(res => 
-    //         (!res.ok)
-    //         ?res.json().then(e => Promise.reject(e))
-    //         :res.json()
-    //         )
-    // },
-    // getHighScores(){
-    //     return fetch(`${config.API_ENDPOINT}/memory-general/high_scores`, {
-    //         headers:{
-    //             'authorization':`bearer ${TokenService.getAuthToken()}`
-    //         },
-    //     })
-    //     .then(res =>
-    //         (!res.ok) ?res.json().then(e => Promise.reject(e)) :res.json ())
-    // },
-    // postName(name){
-    //     return fetch(`${config.API_ENDPOINT}/memory-general`, {
-    //         method: 'POST',
-    //         headers:{
-    //             'content-type':'application/json',
-    //             'authorization':`bearer ${TokenService.getAuthToken()}`
-    //         },
-    //         body: JSON.stringify({
-    //             player_name: name,
-    //             total_time_played: `00:00:00`,
-    //         }),
-    //     })
-    //     .then(res =>
-    //         (!res.ok)
-    //         ?res.json().then(e=>Promise.reject(e))
-    //         :res.json()
-    //         )
-    // }
 }
 
 export default MemoryApiService
