@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin:0;
+    height:85vh;
+}
+
+.Landing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height:85vh;
+}
+
+button{
+    font-size: 1.3em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:5vh; 
+}
+
+.userChoices{
+    align-items: center;
+    justify-content: space-between;
+}
+
+#newCharacterPage, #highScores, #playerStatistics{
+    margin-bottom:5vh;
+}
+
+#newCharacterPage{
+    margin-top:5vh;
+}
+
+.welcome{
+    padding:10%;
+}
+
+h2{
+    margin-bottom:10vh;
+}
+
+
+@media only screen and (min-width:720px){
+
+    #newCharacterPage{
+        margin-top:10vh;
+    }
+
+}

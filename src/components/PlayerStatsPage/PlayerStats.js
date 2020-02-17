@@ -2,8 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom' 
 import MemoryContext from '../context/MemoryContext'
 import MemoryApiService from '../../services/memory-api-service'
+import './playerStats.css'
 
-
+/*
+    The 'PlayerStats' component render function displays the player statistics if the player is logged in.
+    'MemoryApiService' handles calls to the database based off of the unique player name.
+*/
 class PlayerStats extends React.Component {
 
     static contextType = MemoryContext
@@ -19,6 +23,7 @@ class PlayerStats extends React.Component {
         expert:0
     }
 
+    // Makes calls to the API service to get the player statistics and load them into state.
     componentDidMount(){
         try{
             setTimeout(()=>{ 
@@ -43,10 +48,11 @@ class PlayerStats extends React.Component {
 
     }
 
+    // Display for player statistics
     render(){
 
         return(
-            <div className='playerStats'>
+            <div className='PlayerStats'>
                 <header>
                     <h2>Player Statistics</h2>
                 </header>

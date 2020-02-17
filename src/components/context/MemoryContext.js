@@ -1,5 +1,9 @@
 import React from 'react'
 
+/*
+    Transport for data needed globally.
+*/
+
 const MemoryContext = React.createContext({
     updatePlayerExperienceLevel: () => {},
     updateCardsForExperienceLevel: () => {},

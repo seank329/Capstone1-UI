@@ -1,6 +1,12 @@
 import React from 'react'
 import Card from '../Card/Card'
-import './CardMultiplier.css'
+import './cardMultiplier.css'
+
+
+/*
+    CarMultiplier function receives the number of cards used for the current level from the 'Game' component,
+    and fills an array of 'Card' components in a randomized order for gameplay.
+*/
 
 function CardMultiplier(props) {
     
@@ -17,18 +23,14 @@ function CardMultiplier(props) {
 
     if (props.stateOfRandomization===false) {
     while(temp.length < cardNumbers){
-        console.log(imageArray)
         index = Math.floor(Math.random()*(cardNumbers))
         if(temp.indexOf(index)===-1){
             temp.push(index)
         }
-        console.log(temp)
     }
     for(let i = 0; i < cardNumbers; i++){
         randomizedCards[i]=imageArray[temp[i]]
     }
-    console.log(randomizedCards)
-    console.log(props.experience)
     imageArray=randomizedCards;    
 }
  

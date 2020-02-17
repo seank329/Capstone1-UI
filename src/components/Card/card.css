@@ -20,6 +20,7 @@ html, .cardContainer{
     margin-top:auto;
     margin-bottom:auto;
     align-items:center;
+    background-color: red;
 }
 
 .cardImage{
@@ -28,4 +29,28 @@ html, .cardContainer{
     border-width:1px;
     height:2.5em;
     width:3em;
+    background-color: aliceblue;
+}
+
+
+
+@media only screen and (min-width:720px){
+
+    .cardContainer{
+        width:6em;
+    }
+
+    .card{
+        height:8em;
+        width:6em;
+    }
+
+    .cardImage{
+        height:5em;
+        width:6em;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+    }
+
 }

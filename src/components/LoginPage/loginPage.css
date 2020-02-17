@@ -1,0 +1,28 @@
+.loginPage{
+    padding:5%;
+}
+
+#loginButton{
+    margin-bottom:2vh;
+}
+
+#registerButton{
+    margin-top:5vh;
+}
+
+
+#loginButton, #registerButton{
+    font-size: 1em;
+}
+
+@media only screen and (min-width:370px) and (max-width:480px){
+    input{
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    form{
+        margin-top:10vh;
+    }
+}

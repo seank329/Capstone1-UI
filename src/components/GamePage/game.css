@@ -1,0 +1,62 @@
+.gamePage{
+    height:85vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.quit{
+    text-align: center;
+    height:5vh;
+}
+
+#quitButton{
+    font-size: 1em;
+    /* position: relative;
+    top:17vh; */
+}
+
+.displayArea{
+    display:flex;
+    flex-direction: column;
+    height:15vh;
+}
+
+@media only screen and (max-width:450px){
+
+    h3{
+        margin:0;
+    }
+
+    h2{
+        margin:0;
+    }
+
+}
+
+@media only screen and (min-width:720px){
+
+    .cardsArea{
+        height:65vh;
+    }
+
+    .displayArea{
+        height:20vh;
+    }
+
+    .quit{
+      height:5vh;
+    }
+
+    h3{
+        margin:0;
+    }
+
+    h2{
+        margin:0;
+    }
+
+    #backToHome{
+        margin-top:2vh;
+    }
+
+}

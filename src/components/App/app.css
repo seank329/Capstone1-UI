@@ -1,0 +1,31 @@
+html, .App{
+    margin:0;
+    height:100vh;
+  }
+  
+.App {
+    text-align: center;
+    border:2px solid black;
+    background-image: url('https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  }
+
+h1{
+   margin:0;
+  }
+
+header{
+  padding-top:3vh;
+  height:15vh;
+}
+
+main{
+  height:85vh;
+}
+
+@media only screen and (max-width:480px){
+
+  header{
+    height:10vh;
+  }
+
+}

@@ -2,10 +2,19 @@
     box-sizing: border-box;
 }
 
-.newCharacterScreen{
+.experienceLevelScreen{
     display:flex;
     justify-content: center;
     flex-direction: column;
     padding:5%;
     text-align: center;
+    height:65vh;
+}
+
+#continueButton{
+    margin-top: 5vh;
+}
+
+select{
+    font-size: 1.5em;
 }

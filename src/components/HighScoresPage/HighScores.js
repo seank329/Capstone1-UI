@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import MemoryApiService from '../../services/memory-api-service'
-import './HighScores.css'
+import './highScores.css'
 
+
+/*
+    The 'HighScores' Component makes calls to the 'MemoryApiService' to get and display data about player
+    high scores for each difficulty level.
+*/
 class HighScores extends React.Component{
 
     state={
@@ -14,6 +19,8 @@ class HighScores extends React.Component{
         expert:''
     }
 
+
+    // Api calls made for the database at each difficulty level
     componentDidMount(){
 
         MemoryApiService.getHighScoresBeginner()
@@ -31,10 +38,9 @@ class HighScores extends React.Component{
         MemoryApiService.getHighScoresExpert()
         .then(data => this.setState({expert:data}))
 
-
-
     }
-    
+
+    // Converts the time in seconds to a more readable format
     showTime=(seconds)=>{
         if(seconds>60){
             let minutes = Math.floor(seconds/60)
@@ -73,7 +79,7 @@ class HighScores extends React.Component{
                     <div className='playerTime'>{this.showTime(Object.values(this.state.expert)[1])}</div>
                 </div>
                 <Link to='/'>
-                    <button type='button'>Back to Main Page</button>
+                    <button type='button' id='back'>Back to Main Page</button>
                 </Link>
             </div>
         )

@@ -2,9 +2,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import MemoryContext from '../context/MemoryContext'
-import './ExperienceLevel.css'
-import MemoryApiService from '../../services/memory-api-service'
+import './experienceLevel.css'
 
+/*
+    The 'ExperienceLevel' component gets the player's desired level of play from a drop-down menu. The number
+    of cards for play is assigned here, and passed to the 'App' component to be used globally. 
+*/
 class ExperienceLevel extends Component {
 
     static contextType=MemoryContext
@@ -17,7 +20,6 @@ class ExperienceLevel extends Component {
         let cards
         e.preventDefault();
         this.context.updatePlayerExperienceLevel(e.target.value)
-        //this.props.playerExperience(e.target.value)
         switch(e.target.value){
             case('Test'):
                 cards=2
@@ -40,9 +42,6 @@ class ExperienceLevel extends Component {
         }
         this.context.updateCardsForExperienceLevel(cards)
         this.setState({selected:true})
-        //this.context.updatePage('gameScreen')
-        //this.props.updateCardsInPlay(cards)
-        //this.props.changePage('gameScreen')
     }
     
     render(props) {
@@ -58,7 +57,7 @@ class ExperienceLevel extends Component {
                     <option value='Hard'>Hard</option>
                     <option value='Expert'>Expert</option>
                 </select>
-                {this.state.selected===true? <Link to='/game'><button type='button'>Continue</button></Link> : null}
+                {this.state.selected===true? <Link to='/game'><button type='button' id='continueButton'>Continue</button></Link> : null}
             </div>
         )
     }

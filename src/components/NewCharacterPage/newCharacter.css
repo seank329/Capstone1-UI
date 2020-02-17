@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+.newCharacterScreen{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:5%;
+    text-align: center;
+    height:85vh;
+}
+
+@media only screen and (max-width:325px){
+
+    #guestButton{
+        margin-bottom: 5vh;
+    }
+}
+
+@media only screen and (max-width:450px){
+    #guestButton{
+        margin-bottom: 10vh;
+    }
+}
