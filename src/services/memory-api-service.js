@@ -103,10 +103,10 @@ const MemoryApiService = {
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
         })
-        .then(res => 
+        .then(data => 
             (!res.ok)
             ?res.json().then(e => Promise.reject(e))
-            :res.json()
+            :res.json(data)
             )
         }catch(error){
            console.log(error)
