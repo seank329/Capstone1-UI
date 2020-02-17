@@ -108,11 +108,11 @@ const MemoryApiService = {
         //     ?res.json().then(e => Promise.reject(e))
         //     :res.json(data)
         //     )
-        .then(data => 
-            (!data)
-            ? null
-            :data
-            )
+        .then(data => {
+            if(!data){
+                return null
+            } else return data
+        })
         }catch(error){
            console.log(error)
         }
