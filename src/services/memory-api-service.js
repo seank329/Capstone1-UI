@@ -101,7 +101,6 @@ const MemoryApiService = {
         return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${player}`, {
             method:'GET',
             headers: { 
-                'mode':'same-origin',
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
         })
