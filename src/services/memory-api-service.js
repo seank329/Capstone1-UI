@@ -99,6 +99,8 @@ const MemoryApiService = {
     getPlayerStats(player){
         try{
         return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${player}`, {
+            method:'GET',
+            mode:'no-cors',
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
