@@ -39,6 +39,7 @@ class PlayerStats extends React.Component {
                         hard:data.quickest_game_played_hard,
                         expert:data.quickest_game_played_expert,
                     })
+                    return res
                 })
             },600)
         } catch(err) {
