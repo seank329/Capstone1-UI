@@ -14,8 +14,8 @@ class PlayerStats extends React.Component {
 
     state={
         name:'',
-        totalGames:'',
-        totalTime:'',
+        totalGames:0,
+        totalTime:0,
         beginner:0,
         easy:0,
         medium:0,
@@ -29,7 +29,6 @@ class PlayerStats extends React.Component {
             setTimeout(()=>{ 
                 MemoryApiService.getPlayerStats(this.context.playerName)
                 .then(data => {
-                    data ? 
                     this.setState({
                         name:data.player_name,
                         totalGames:data.games_played,
@@ -39,9 +38,8 @@ class PlayerStats extends React.Component {
                         medium:data.quickest_game_played_medium,
                         hard:data.quickest_game_played_hard,
                         expert:data.quickest_game_played_expert,
-                    }) : console.log('No data to report')
+                    })
                 })
-
             },600)
         } catch(err) {
                 console.log(err)
@@ -57,8 +55,8 @@ class PlayerStats extends React.Component {
                 <header>
                     <h2>Player Statistics</h2>
                 </header>
-                <p>Total Games Played : {this.state.totalGames ? this.state.totalGames : null}</p>
-                <p>Total Time Played: {this.state.totalTime ? this.state.totalTime : null}</p>
+                <p>Total Games Played : {this.state.totalGames ? this.state.totalGames : 0}</p>
+                <p>Total Time Played: {this.state.totalTime ? this.state.totalTime : 0}</p>
                 <p>Quickest Time for Beginner: {this.state.beginner===0 ? 'No Games Played' : this.state.beginner}</p>
                 <p>Quickest Time for Easy: {this.state.easy===0 ? 'No Games Played' : this.state.easy}</p>
                 <p>Quickest Time for Medium: {this.state.medium===0 ? 'No Games Played' : this.state.medium}</p>
