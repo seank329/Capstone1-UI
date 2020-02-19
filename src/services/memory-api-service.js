@@ -107,8 +107,7 @@ const MemoryApiService = {
             ?res.json().then(e => Promise.reject(e))
             :res.json()
             )
-        }
-    },
+        },
 
     getHighScoresBeginner(){
         return fetch(`${config.API_ENDPOINT}/api/memory-general/high_scores/beginner`, {
