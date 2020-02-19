@@ -97,9 +97,7 @@ const MemoryApiService = {
     },
 
     getPlayerStats(player){
-        try{
         return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${player}`, {
-            method:'GET',
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -109,8 +107,6 @@ const MemoryApiService = {
             ?res.json().then(e => Promise.reject(e))
             :res.json()
             )
-        }catch(error){
-           console.log(error)
         }
     },
 
