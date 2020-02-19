@@ -27,7 +27,7 @@ class PlayerStats extends React.Component {
     componentDidMount(){
         try{
             setTimeout(()=>{ 
-                MemoryApiService.getPlayerStats(this.context.currentPlayerId)
+                MemoryApiService.getPlayerStats(this.context.playerId)
                 .then(data => {
                     this.setState({
                         name:data.player_name,
