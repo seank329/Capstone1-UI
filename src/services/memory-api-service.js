@@ -96,8 +96,8 @@ const MemoryApiService = {
         //     )   
     //},
 
-    getPlayerStats(player){
-        return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${player}`, {
+    getPlayerStats(id){
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${id}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
