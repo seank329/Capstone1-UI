@@ -22,16 +22,16 @@ class Landing extends React.Component{
 
     // Checks for an authToken when the component is initally mounted
     componentDidMount(){
-        setTimeout(()=>{
-            if(!this.state.hasId && TokenService.hasAuthToken()){
-                this.setState({hasId:true,
-                                loggedIn:true})
-                MemoryApiService.getPlayerId(this.context.playerName)
-                .then(id =>
-                    this.context.updateCurrentPlayerId(id.id)
-                  )
-            } 
-        },600)
+        // setTimeout(()=>{
+        //     if(!this.state.hasId && TokenService.hasAuthToken()){
+        //         this.setState({hasId:true,
+        //                         loggedIn:true})
+        //         MemoryApiService.getPlayerId(this.context.playerName)
+        //         .then(id =>
+        //             this.context.updateCurrentPlayerId(id.id)
+        //           )
+        //     } 
+        // },600)
     }
 
     // Logout of the application

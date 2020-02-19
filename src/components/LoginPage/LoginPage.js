@@ -48,6 +48,7 @@ class LoginPage extends React.Component{
             .then(res => {
                 console.log(res)
                 this.context.updateCurrentPlayer(nameLogin.value)
+                this.context.updateCurrentPlayerId(res.id)
                 nameLogin.value = ''
                 passwordLogin.value = ''
                 // TokenService.saveAuthToken(res.authToken)
