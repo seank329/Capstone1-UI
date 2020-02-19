@@ -83,18 +83,18 @@ const MemoryApiService = {
             )
     },
     
-    getPlayerId(player){
-        return fetch(`${config.API_ENDPOINT}/api/users/get_id/${player}`, {
-            headers: { 
-                'authorization':`bearer ${TokenService.getAuthToken()}`
-            },
-        })
-        .then(res => 
-            (!res.ok)
-            ?res.json().then(e => Promise.reject(e))
-            :res.json()
-            )   
-    },
+    //getPlayerId(player){
+        // return fetch(`${config.API_ENDPOINT}/api/users/get_id/${player}`, {
+        //     headers: { 
+        //         'authorization':`bearer ${TokenService.getAuthToken()}`
+        //     },
+        // })
+        // .then(res => 
+        //     (!res.ok)
+        //     ?res.json().then(e => Promise.reject(e))
+        //     :res.json()
+        //     )   
+    //},
 
     getPlayerStats(player){
         return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${player}`, {
