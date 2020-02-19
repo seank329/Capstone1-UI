@@ -46,7 +46,7 @@ class LoginPage extends React.Component{
                 password: passwordLogin.value
             })
             .then(res => {
-                console.log(res)
+                console.log(res.id)
                 this.context.updateCurrentPlayer(nameLogin.value)
                 this.context.updateCurrentPlayerId(res.id)
                 nameLogin.value = ''
