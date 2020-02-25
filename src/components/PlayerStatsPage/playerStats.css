@@ -4,3 +4,12 @@
     justify-content: center;
     height: 85vh;
 }
+
+@media only screen and (min-width:900px){
+
+
+    p{
+        font-size: 1.5em;
+    }
+
+}
