@@ -20,19 +20,19 @@ API Endpoint - https://nameless-depths-55236.herokuapp.com/
 
 
   * ##### ${config.API_ENDPOINT}/api/memory-general/player/${id}
-    POST
+    POST   <br />
     Route for setting up a player's default statistics
   
   * ##### ${config.API_ENDPOINT}/api/memory-general/player/${id}
-    PUT
+    PUT   <br />
     Route for posting times if quickest, as well as updating games played and total time played
   
   * ##### ${config.API_ENDPOINT}/api/memory-general/player/${id}
-    GET
+    GET   <br />
     Route for acquiring player statistics
   
   * ##### ${config.API_ENDPOINT}/api/memory-general/experience/${level}
-    GET
+    GET   <br />
     Route for getting high scores at each difficulty level. Public 
   
   
