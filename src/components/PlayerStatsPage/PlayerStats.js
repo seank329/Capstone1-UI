@@ -37,7 +37,7 @@ class PlayerStats extends React.Component {
                         easy:data.quickest_game_played_easy,
                         medium:data.quickest_game_played_medium,
                         hard:data.quickest_game_played_hard,
-                        expert:data.quickest_game_played_expert,
+                        expert:data.quickest_game_played_expert
                     })
                     //return data
                 })
