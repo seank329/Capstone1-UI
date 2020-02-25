@@ -57,9 +57,9 @@ const MemoryApiService = {
     // Route for getting high scores at each difficulty level. Public access
     getHighScores(level){
             return fetch(`${config.API_ENDPOINT}/api/memory-general/experience/${level}`, {
-                // headers: { 
-                //     'authorization':`bearer ${TokenService.getAuthToken()}`
-                // },
+                headers: { 
+                    'authorization':`bearer ${TokenService.getAuthToken()}`
+                },
             })
             .then(res => 
                 (!res)
