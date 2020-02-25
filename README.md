@@ -34,6 +34,10 @@ API Endpoint - https://nameless-depths-55236.herokuapp.com/
   * ##### ${config.API_ENDPOINT}/api/memory-general/experience/${level}
     GET   <br />
     Route for getting high scores at each difficulty level. Public 
-  
-  
-  
+       <br />
+       <br />
+       
+   
+   Screenshots
+   -----------
+   ![Landing Page] ('/Home/Desktop/FireShot Capture 024 - Memory Challenge! - memory-app-sigma.now.sh.png')
