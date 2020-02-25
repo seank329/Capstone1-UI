@@ -48,6 +48,7 @@ class PlayerStats extends React.Component {
 
     }
 
+    // Converts the time in seconds to a more readable format
     showTime=(seconds)=>{
         if(seconds>60){
             let minutes = Math.floor(seconds/60)
@@ -62,7 +63,6 @@ class PlayerStats extends React.Component {
 
     // Display for player statistics
     render(){
-
         return(
             <div className='PlayerStats'>
                 <header>

@@ -90,6 +90,7 @@ class Game extends Component{
         },500)
     }
 
+    
     updateCardsInPlay=(cardArray)=>{
         if(this.state.cardsInPlay.length === 1){
             this.setState({cardsInPlay:cardArray})
@@ -228,8 +229,6 @@ class Game extends Component{
         let isQuickest = false;
         let count = 0
         if(this.context.playerId!=='' && count < 1 ){
-            //MemoryApiService.postGamesPlayed(this.context.playerId)
-            //setTimeout(()=>{MemoryApiService.postTotalTimePlayed(this.state.timeElapsed, this.context.playerId)},700)
             if(this.state.quickestTime===0){
                 isQuickest=true
                 setTimeout(()=>{MemoryApiService.postTimes(this.context.playerId, this.context.playerExperienceLevel, this.state.timeElapsed, isQuickest)},500)

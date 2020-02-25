@@ -9,6 +9,7 @@ import './card.css'
 
 class Card extends React.Component{
 
+  // Default image is a card number
    display=()=>{
       for(let i=0; i < this.props.notInPlay.length; i++) {
           if (this.props.id===this.props.notInPlay[i]){ 

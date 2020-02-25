@@ -16,13 +16,14 @@ class ExperienceLevel extends Component {
         selected:false
     }
 
+    // Switch statement assigns the number of cards in play based on player-chosen difficulty level
     handleChange=(e)=>{
         let cards
         e.preventDefault();
         this.context.updatePlayerExperienceLevel(e.target.value)
         switch(e.target.value){
             case('Test'):
-                cards=2
+                cards=2         // Test use only
                 break;
             case('Beginner'):
                 cards=16
@@ -44,13 +45,13 @@ class ExperienceLevel extends Component {
         this.setState({selected:true})
     }
     
+    // Select option drop-down for difficulty level
     render(props) {
         return(
             <div className='experienceLevelScreen'>
                 <h2>Please Choose Your Level of Experience</h2>
                 <select onChange={this.handleChange} required>
                     <option></option>
-                    <option value='Test'>Test</option>
                     <option value='Beginner'>Beginner</option>
                     <option value='Easy'>Easy</option>
                     <option value='Medium'>Medium</option>
