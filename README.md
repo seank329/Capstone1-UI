@@ -40,5 +40,5 @@ API Endpoint - https://nameless-depths-55236.herokuapp.com/
    
    Screenshots
    -----------
-   ![Alt Landing](~/Home/Desktop/001.png)
+   ![Alt Landing](/Home/Desktop/001.png)
    
