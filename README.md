@@ -45,17 +45,16 @@ API Endpoint - https://nameless-depths-55236.herokuapp.com/
    ![Alt Login](/003.png)
    ![Alt Game Screen](/004.png)
    ![Alt Player Stats](/005.png)
-   
       <br />
       <br />
-   
+      
    Description
    -----------
    This app is a fun little game to challenge your memory! Cards are randomly ordered, face down. Try to find matching pairs
    to clear the game board and try to get the lowest times possible!
-   
-       <br />
-       <br />
+      <br />
+      <br />
+
        
    Technologies Used
    -----------------
