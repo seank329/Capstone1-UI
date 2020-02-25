@@ -69,7 +69,8 @@ class Landing extends React.Component{
                     <div className='welcome'>
                         <h3>Welcome to the memory game where you try to find matching pairs of cards which
                         have been randomly sorted.</h3>
-                        <h3> Please register to view and post your best times!</h3>    
+                        <h3> Please register to view and post your best times!</h3> 
+                        <h3> Login with user name: GUEST and password : pas5worD! for trial access </h3>   
                     </div>                
                 </div>
             )
