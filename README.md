@@ -42,4 +42,7 @@ API Endpoint - https://nameless-depths-55236.herokuapp.com/
    -----------
    ![Alt Landing](/001.png)
    ![Alt High Scores](/002.png)
+   ![Alt Login](/003.png)
+   ![Alt Game Screen](/004.png)
+   ![Alt Player Stats](/005.png)
    
