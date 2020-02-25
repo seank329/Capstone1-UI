@@ -90,7 +90,7 @@ class Game extends Component{
         },500)
     }
 
-    
+
     updateCardsInPlay=(cardArray)=>{
         if(this.state.cardsInPlay.length === 1){
             this.setState({cardsInPlay:cardArray})
@@ -247,13 +247,14 @@ class Game extends Component{
         return(
             <div className='gamePage'>
                 <div className='cardsArea'>
+                {this.state.won ? <h2>You've Won!</h2> : null}
                     <CardMultiplier arrayofcards={this.updateCardsInPlay} onClick={(e)=>this.handleClick(e)} 
                     image1={this.state.image1} image2={this.state.image2} notInPlay={this.state.idsNotInPlay} 
                     inPlay={this.state.cardsInPlay} stateOfRandomization={this.state.randomized} experience={this.context.cardsForExperienceLevel}/>
                 </div>
                 <div className='displayArea'>
                     {this.display()}
-                    {this.state.won ? <h2>You've Won!</h2> : null}
+                    {/* {this.state.won ? <h2>You've Won!</h2> : null} */}
                     {(this.state.won && this.context.playerId!=='')? <Link to='/player'><button type='button' id='continue'>Continue</button></Link>:null}
                     {(this.state.won && this.context.playerId==='')? <Link to='/'><button type='button' id='backToHome'>Back to Home</button></Link>:null}
                 </div>
