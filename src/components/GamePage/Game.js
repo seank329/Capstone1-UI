@@ -37,7 +37,7 @@ class Game extends Component{
             won:false,
             timeSet:false,
             display:'',
-            quickestTime:'',
+            quickestTime:{},
         }
        this.updateCardsInPlay=this.updateCardsInPlay.bind(this)
        this.updateStateOfReveal=this.updateStateOfReveal.bind(this)
@@ -53,10 +53,39 @@ class Game extends Component{
         this.setState({randomized:true})
         setTimeout(()=>{
             if(this.context.playerId!==''){
-                MemoryApiService.getQuickTime(this.context.playerId, this.context.playerExperienceLevel)
-                .then(data =>{
-                    this.setState({quickestTime:parseInt(Object.values(data).toString())})
-                })
+                switch(this.context.playerExperienceLevel){
+                    case('Beginner'):
+                        MemoryApiService.getPlayerStats(this.context.playerId)
+                            .then(data =>{
+                            this.setState({quickestTime: data.quickest_game_played_beginner})
+                        })
+                     break;
+                     case('Easy'):
+                        MemoryApiService.getPlayerStats(this.context.playerId)
+                            .then(data =>{
+                            this.setState({quickestTime: data.quickest_game_played_easy})
+                        })
+                    break;
+                    case('Medium'):
+                        MemoryApiService.getPlayerStats(this.context.playerId)
+                            .then(data =>{
+                            this.setState({quickestTime: data.quickest_game_played_medium})
+                        })
+                    break;
+                    case('Hard'):
+                        MemoryApiService.getPlayerStats(this.context.playerId)
+                            .then(data =>{
+                            this.setState({quickestTime: data.quickest_game_played_hard})
+                        })
+                    break;
+                    case('Expert'):
+                        MemoryApiService.getPlayerStats(this.context.playerId)
+                            .then(data =>{
+                            this.setState({quickestTime: data.quickest_game_played_expert})
+                        })
+                    break;
+
+                }
             }
         },500)
     }
@@ -196,14 +225,19 @@ class Game extends Component{
 
     // Makes calls to the 'MemoryApiService' on game completion if the user is logged in to update the database
     gameOver=()=>{
+        let isQuickest = false;
         let count = 0
         if(this.context.playerId!=='' && count < 1 ){
-            MemoryApiService.postGamesPlayed(this.context.playerId)
-            setTimeout(()=>{MemoryApiService.postTotalTimePlayed(this.state.timeElapsed, this.context.playerId)},700)
+            //MemoryApiService.postGamesPlayed(this.context.playerId)
+            //setTimeout(()=>{MemoryApiService.postTotalTimePlayed(this.state.timeElapsed, this.context.playerId)},700)
             if(this.state.quickestTime===0){
-                setTimeout(()=>{MemoryApiService.postQuickestGame(this.context.playerId, this.context.playerExperienceLevel, this.state.timeElapsed)},500)
+                isQuickest=true
+                setTimeout(()=>{MemoryApiService.postTimes(this.context.playerId, this.context.playerExperienceLevel, this.state.timeElapsed, isQuickest)},500)
             } else if((this.state.timeElapsed < this.state.quickestTime)){
-                setTimeout(()=>{MemoryApiService.postQuickestGame(this.context.playerId, this.context.playerExperienceLevel, this.state.timeElapsed)},500)
+                isQuickest = true
+                setTimeout(()=>{MemoryApiService.postTimes(this.context.playerId, this.context.playerExperienceLevel, this.state.timeElapsed, isQuickest)},500)
+            } else {
+                setTimeout(()=>{MemoryApiService.postTimes(this.context.playerId, this.context.playerExperienceLevel, this.state.timeElapsed, isQuickest)},500)
             }
             count++
         }

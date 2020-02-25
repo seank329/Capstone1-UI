@@ -48,6 +48,18 @@ class PlayerStats extends React.Component {
 
     }
 
+    showTime=(seconds)=>{
+        if(seconds>60){
+            let minutes = Math.floor(seconds/60)
+            let minSeconds = Math.floor(seconds%60)
+            return(minutes + " minutes " + minSeconds + " seconds")
+        } else if(seconds > 0){
+            return (seconds + ' seconds')
+        } else {
+            return ('No Game Data For This Level')
+        }
+    }
+
     // Display for player statistics
     render(){
 
@@ -57,12 +69,12 @@ class PlayerStats extends React.Component {
                     <h2>Player Statistics</h2>
                 </header>
                 <p>Total Games Played : {this.state.totalGames ? this.state.totalGames : 0}</p>
-                <p>Total Time Played: {this.state.totalTime ? this.state.totalTime : 0}</p>
-                <p>Quickest Time for Beginner: {this.state.beginner===0 ? 'No Games Played' : this.state.beginner}</p>
-                <p>Quickest Time for Easy: {this.state.easy===0 ? 'No Games Played' : this.state.easy}</p>
-                <p>Quickest Time for Medium: {this.state.medium===0 ? 'No Games Played' : this.state.medium}</p>
-                <p>Quickest Time for Hard: {this.state.hard===0 ? 'No Games Played' : this.state.hard}</p>
-                <p>Quickest Time for Expert: {this.state.expert===0 ? 'No Games Played' : this.state.expert}</p>
+                <p>Total Time Played: {this.state.totalTime ? this.showTime(parseInt(this.state.totalTime)) : 'No Games Played'}</p>
+                <p>Quickest Time for Beginner: {this.state.beginner===0 ? 'No Games Played' : this.showTime(parseInt(this.state.beginner))}</p>
+                <p>Quickest Time for Easy: {this.state.easy===0 ? 'No Games Played' : this.showTime(parseInt(this.state.easy))}</p>
+                <p>Quickest Time for Medium: {this.state.medium===0 ? 'No Games Played' : this.showTime(parseInt(this.state.medium))}</p>
+                <p>Quickest Time for Hard: {this.state.hard===0 ? 'No Games Played' : this.showTime(parseInt(this.state.hard))}</p>
+                <p>Quickest Time for Expert: {this.state.expert===0 ? 'No Games Played' : this.showTime(parseInt(this.state.expert))}</p>
                 <Link to='/'>
                     <button type='button'>Back to Main Page</button>
                 </Link>   

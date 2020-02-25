@@ -16,7 +16,8 @@ const MemoryApiService = {
     },
 
     setupNewPlayer(id){
-        return fetch(`${config.API_ENDPOINT}/api/memory-general/setup/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/${id}`, {
+            method:'POST',
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -41,19 +42,19 @@ const MemoryApiService = {
                 )   
     },
 
-    postQuickestGame(id, level, time){
+    postTimes(id, level, total, isQuickest){
         let experienceLevel = level.toLowerCase()
-        return fetch(`${config.API_ENDPOINT}/api/memory-general/post_quickest`, {
-            method: 'POST',
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/${id}`, {
+            method: 'PUT',
             headers:{
                 'content-type':'application/json',
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
-            
             body: JSON.stringify({
-                player_id: id,
+                player_id:id,
                 experience: experienceLevel,
-                quickest_time: time,
+                total_time_played:total,
+                is_quickest:isQuickest
             }),
         })
         .then(res =>
@@ -84,7 +85,7 @@ const MemoryApiService = {
     },
 
     getPlayerStats(id){
-        return fetch(`${config.API_ENDPOINT}/api/memory-general/player_stats/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/${id}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },
@@ -95,6 +96,19 @@ const MemoryApiService = {
             :res.json()
             )
         },
+
+    getHighScores(level){
+            return fetch(`${config.API_ENDPOINT}/api/memory-general/experience/${level}`, {
+                // headers: { 
+                //     'authorization':`bearer ${TokenService.getAuthToken()}`
+                // },
+            })
+            .then(res => 
+                (!res)
+                ?res.json().then(e => Promise.reject(e))
+                :res.json()
+                )   
+    },
 
     getHighScoresBeginner(){
         return fetch(`${config.API_ENDPOINT}/api/memory-general/high_scores/beginner`, {

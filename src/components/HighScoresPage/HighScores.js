@@ -12,31 +12,30 @@ class HighScores extends React.Component{
 
     state={
         error:null,
-        beginner:'',
-        easy:'',
-        medium:'',
-        hard:'',
-        expert:''
+        beginner:{},
+        easy:{},
+        medium:{},
+        hard:{},
+        expert:{}
     }
 
 
     // Api calls made for the database at each difficulty level
     componentDidMount(){
-
-        MemoryApiService.getHighScoresBeginner()
-        .then(data => this.setState({beginner:data}))
-        
-        MemoryApiService.getHighScoresEasy()
-        .then(data => this.setState({easy:data}))
-
-        MemoryApiService.getHighScoresMedium()
-        .then(data => this.setState({medium:data}))
-
-        MemoryApiService.getHighScoresHard()
-        .then(data => this.setState({hard:data}))
-
-        MemoryApiService.getHighScoresExpert()
-        .then(data => this.setState({expert:data}))
+        try{
+        MemoryApiService.getHighScores('beginner')
+            .then(data=> this.setState({beginner : data}))
+        MemoryApiService.getHighScores('easy')
+            .then(data=> this.setState({easy : data}))
+        MemoryApiService.getHighScores('medium')
+            .then(data=> this.setState({medium : data}))
+        MemoryApiService.getHighScores('hard')
+            .then(data=> this.setState({hard : data}))
+        MemoryApiService.getHighScores('expert')
+            .then(data=> this.setState({expert : data}))
+        } catch(e){
+            console.log(e)
+        }
 
     }
 
