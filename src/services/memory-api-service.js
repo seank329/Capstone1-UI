@@ -3,7 +3,7 @@ import config from '../config.js'
 
 const MemoryApiService = {
     setupNewPlayer(id){
-        return fetch(`${config.API_ENDPOINT}/api/memory-general/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/player/${id}`, {
             method:'POST',
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
@@ -18,7 +18,7 @@ const MemoryApiService = {
 
     postTimes(id, level, total, isQuickest){
         let experienceLevel = level.toLowerCase()
-        return fetch(`${config.API_ENDPOINT}/api/memory-general/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/player/${id}`, {
             method: 'PUT',
             headers:{
                 'content-type':'application/json',
@@ -40,7 +40,7 @@ const MemoryApiService = {
 
 
     getPlayerStats(id){
-        return fetch(`${config.API_ENDPOINT}/api/memory-general/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/api/memory-general/player/${id}`, {
             headers: { 
                 'authorization':`bearer ${TokenService.getAuthToken()}`
             },

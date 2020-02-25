@@ -11,8 +11,8 @@
 
 #quitButton{
     font-size: 1em;
-    /* position: relative;
-    top:17vh; */
+    position: relative;
+    bottom:3vh;
 }
 
 .displayArea{
