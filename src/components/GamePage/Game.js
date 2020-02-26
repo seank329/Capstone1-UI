@@ -256,12 +256,11 @@ class Game extends Component{
                 </div>
                 <div className='displayArea'>
                     {this.display()}
-                    {/* {this.state.won ? <h2>You've Won!</h2> : null} */}
                     {(this.state.won && this.context.playerId!=='')? <Link to='/player'><button type='button' id='continue'>Continue</button></Link>:null}
                     {(this.state.won && this.context.playerId==='')? <Link to='/'><button type='button' id='backToHome'>Back to Home</button></Link>:null}
-                </div>
-                <div className='quit'>
-                    {!this.state.won ?  <Link to='/'><button type='button' id='quitButton'>Quit Game</button></Link>: null }
+                    <div className='quit'>
+                        {!this.state.won ?  <Link to='/'><button type='button' id='quitButton'>Quit Game</button></Link>: null }
+                    </div>
                 </div>
             </div>
         )

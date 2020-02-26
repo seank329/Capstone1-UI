@@ -5,17 +5,24 @@
 }
 
 .scoresArea{
-    display:flex;
-    flex-direction: column;
-    height:85vh;
-    justify-content: center;
+    height:45vh;
+}
+
+button#back{
+    margin: 0;
 }
 
 h4{
-    margin-bottom:5px;
+    margin-top:1vh;
+    margin-bottom:0;
 }
 
-@media only screen and (max-width:325px){
+header{
+    padding:0;
+}
+
+
+@media only screen and (min-width:300px) and (max-width:600px){
 
     h2{
         margin-top:0;
@@ -32,15 +39,15 @@ h4{
     }
 
     button#back{
-        font-size: 0.6em;
-        margin:0;
+        font-size: 0.8em;
+        margin-top:2vh;
         width:30vw;
     }
 
 
 }
 
-@media only screen and (max-width:480px){
+@media only screen and (min-width:601px) and (max-width:900px){
 
     h2{
         margin-top:0;
@@ -56,7 +63,7 @@ h4{
     }
 }
 
-@media only screen and (min-width:900px){
+@media only screen and (min-width:901px){
 
     h2{
         font-size: 1.5em;

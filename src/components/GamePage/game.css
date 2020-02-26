@@ -9,26 +9,32 @@
     height:5vh;
 }
 
-#quitButton{
-    font-size: 1em;
-    position: relative;
-    bottom:3vh;
-}
-
 .displayArea{
     display:flex;
     flex-direction: column;
     height:15vh;
+    margin-top:2vh;
 }
 
 @media only screen and (max-width:450px){
 
     h3{
         margin:0;
+        font-size: 0.8em;
     }
 
     h2{
         margin:0;
+    }
+
+    time{
+        display:flex;
+        flex-direction: column;
+    }
+
+    #quitButton{
+        font-size: 0.8em;
+        margin-top:2vh;
     }
 
 }
@@ -58,5 +64,29 @@
     #backToHome{
         margin-top:2vh;
     }
+
+}
+
+@media only screen and (min-width:300px) and (max-width:480px){
+
+
+}
+
+
+@media only screen and (min-width:481px) and (max-width:720px){
+
+
+}
+
+@media only screen and (min-width:721px) and (max-width:1024px){
+
+  
+}
+
+@media only screen and (min-width:1025px) and (max-width:1400px){
+
+}
+
+@media only screen and (min-width:1401px){
 
 }

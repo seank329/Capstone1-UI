@@ -16,7 +16,17 @@ import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import IdleService from '../../services/idle-service';
+import background from '../../images/001.png'
 import './app.css';
+
+
+const styles = {
+  Home:{
+      backgroundImage:`url(${background})`,
+      backgroundSize:'cover'
+  }
+}
+
 
 class App extends React.Component {
   
@@ -124,7 +134,7 @@ class App extends React.Component {
     };
 
   return(
-    <div className='App'>
+    <div className='App' style={styles.Home}>
       <header>
         <h1>Memory Challenge!</h1>
       </header>

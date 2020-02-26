@@ -76,10 +76,10 @@ class HighScores extends React.Component{
                     <h4>Expert</h4>
                     <div className='playerName'>{Object.values(this.state.expert)[0]}</div>
                     <div className='playerTime'>{this.showTime(Object.values(this.state.expert)[1])}</div>
-                </div>
-                <Link to='/'>
+                    <Link to='/'>
                     <button type='button' id='back'>Back to Main Page</button>
-                </Link>
+                    </Link>
+                </div>  
             </div>
         )
 
