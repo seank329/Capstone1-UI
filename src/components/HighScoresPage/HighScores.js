@@ -34,7 +34,7 @@ class HighScores extends React.Component{
         MemoryApiService.getHighScores('expert')
             .then(data=> this.setState({expert : data}))
         } catch(e){
-            console.log(e)
+            console.error(e)
         }
 
     };

@@ -43,7 +43,7 @@ class PlayerStats extends React.Component {
                 })
             },600);
         } catch(err) {
-                console.log(err)
+                console.error(err)
         }
 
     };
