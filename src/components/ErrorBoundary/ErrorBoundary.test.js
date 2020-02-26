@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json'
-import ErrorBoundary from './ErrorBoundary'
+import toJson from 'enzyme-to-json';
+import ErrorBoundary from './ErrorBoundary';
 
 describe ('ErrorBoundary component', () => {
 
@@ -10,6 +10,6 @@ describe ('ErrorBoundary component', () => {
         wrapper.setState({hasError:true})
         setTimeout(() =>{
             expect(toJson(wrapper)).toMatchSnapshot()
-        },500)
-    })
-})
+        },500);
+    });
+});

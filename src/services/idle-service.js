@@ -4,10 +4,10 @@
   this service manages when a user has gone idle (not interacting with the page).
 */
 
-let _timeoutId
-let _idleCallback = null
-let _notIdleEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart' ]
-let _FIVE_MINUTES_IN_MS = 5 * 60 * 1000
+let _timeoutId;
+let _idleCallback = null;
+let _notIdleEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart' ];
+let _FIVE_MINUTES_IN_MS = 5 * 60 * 1000;
 
 const IdleService = {
   setIdleCallback(idleCallback) {
@@ -35,6 +35,6 @@ const IdleService = {
       document.removeEventListener(event, IdleService.resetIdleTimer, true)
     )
   },
-}
+};
 
-export default IdleService
+export default IdleService;

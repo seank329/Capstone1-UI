@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './errorBoundary.css'
+import './errorBoundary.css';
 
 
 /*
@@ -12,11 +12,11 @@ class ErrorBoundary extends React.Component {
     this.state = {
       hasError: false
     };
-  }
+  };
 
   static getDerivedStateFromError(error) {
     return { hasError: true };
-  }
+  };
 
   render() {
     if(this.state.hasError){
@@ -33,7 +33,7 @@ class ErrorBoundary extends React.Component {
       );
     }
     return this.props.children;
-  }
-}
+  };
+};
 
 export default ErrorBoundary;

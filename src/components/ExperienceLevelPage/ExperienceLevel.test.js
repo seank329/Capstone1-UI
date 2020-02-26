@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ExperienceLevel from './ExperienceLevel'
+import ExperienceLevel from './ExperienceLevel';
 
 describe ('ExperienceLevel component', () => {
     const div = document.createElement('div');
@@ -9,5 +9,5 @@ describe ('ExperienceLevel component', () => {
              <ExperienceLevel />, div
         )
         ReactDOM.unmountComponentAtNode(div);
-    })
-})
+    });
+});

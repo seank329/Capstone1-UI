@@ -1,9 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import TokenService from '../../services/token-service'
-import MemoryContext from '../context/MemoryContext'
-import MemoryApiService from '../../services/memory-api-service'
-import './landing.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import TokenService from '../../services/token-service';
+import MemoryContext from '../context/MemoryContext';
+import './landing.css';
 
 
 /*
@@ -25,7 +24,7 @@ class Landing extends React.Component{
     logoutApp=()=>{
         TokenService.clearAuthToken()
         this.setState({loggedIn:false})
-    }
+    };
 
     // Called by the render funtion, display shows different game links dependent upon the user being logged in
     display=()=>{
@@ -75,7 +74,7 @@ class Landing extends React.Component{
                 </div>
             )
         }
-    }
+    };
 
     render(props){
 
@@ -86,7 +85,7 @@ class Landing extends React.Component{
                     </section>
             </div>
         )
-    }
-}
+    };
+};
 
-export default Landing
+export default Landing;

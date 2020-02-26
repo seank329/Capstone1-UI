@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom' 
-import AuthApiService from '../../services/auth-api-service'
-import MemoryApiService from '../../services/memory-api-service'
-import './registrationPage.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom'; 
+import AuthApiService from '../../services/auth-api-service';
+import MemoryApiService from '../../services/memory-api-service';
+import './registrationPage.css';
 
 
 /*
@@ -14,16 +14,16 @@ class RegistrationPage extends Component{
         userName : '',
         error : null,
         password: ''
-    }
+    };
 
     // Clear error message after 2 seconds
     errorClear=()=>{
         if(this.state.error !== null){
             setTimeout(()=>{
                 this.setState({error:null})
-            },2000)
-        }
-    }
+            },2000);
+        };
+    };
 
     // Go to login page after successful registration
     onRegistrationSuccess=()=>{
@@ -41,9 +41,9 @@ class RegistrationPage extends Component{
             passwordRetype.value=''
         } else if(userName.value==='' || password.value==='' || passwordRetype.value === ''){
             this.setState({error:'REGISTRATION FIELDS CANNOT BE BLANK!'})
-            userName.value=''
-            password.value = ''
-            passwordRetype.value=''
+            userName.value='';
+            password.value = '';
+            passwordRetype.value='';
         } else {
             AuthApiService.postUser({
                 player_name: userName.value,
@@ -60,7 +60,7 @@ class RegistrationPage extends Component{
                 this.setState({error:res.error})
             })
         }
-    }
+    };
 
     // Displays the registration form
     render(){
@@ -84,10 +84,10 @@ class RegistrationPage extends Component{
                     <button type='button' id='backButton'>Back to Main Page</button>
                 </Link>    
             </div>
-        )
+        );
 
-    }
+    };
 
-}
+};
 
-export default RegistrationPage
+export default RegistrationPage;

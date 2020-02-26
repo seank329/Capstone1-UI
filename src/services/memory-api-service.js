@@ -1,5 +1,5 @@
-import TokenService from '../services/token-service'
-import config from '../config.js'
+import TokenService from '../services/token-service';
+import config from '../config.js';
 
 const MemoryApiService = {
     // Route for setting up a player's default statistics
@@ -69,6 +69,6 @@ const MemoryApiService = {
     },
 
     
-}
+};
 
-export default MemoryApiService
+export default MemoryApiService;

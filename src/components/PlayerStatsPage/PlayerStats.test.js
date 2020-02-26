@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PlayerStats from './PlayerStats'
-import { BrowserRouter } from 'react-router-dom'
+import PlayerStats from './PlayerStats';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('PlayerStats component', () => {
     
@@ -11,4 +11,4 @@ describe('PlayerStats component', () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-})
+});

@@ -1,22 +1,22 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
-import PrivateRoute from '../routes/PrivateRoute'
-import PublicRoute from '../routes/PublicRoute'
-import MemoryContext from '../context/MemoryContext'
-import NewCharacter from '../NewCharacterPage/NewCharacter'
-import Landing from '../LandingPage/Landing'
-import NotFound from '../NotFound/NotFound'
-import RegistrationPage from '../RegistrationPage/RegistrationPage'
-import ExperienceLevel from '../ExperienceLevelPage/ExperienceLevel'
-import Game from '../GamePage/Game'
-import LoginPage from '../LoginPage/LoginPage'
-import HighScores from '../HighScoresPage/HighScores'
-import PlayerStats from '../PlayerStatsPage/PlayerStats'
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
-import TokenService from '../../services/token-service'
-import AuthApiService from '../../services/auth-api-service'
-import IdleService from '../../services/idle-service'
-import './app.css'
+import { Route, Switch } from 'react-router-dom';
+import PrivateRoute from '../routes/PrivateRoute';
+import PublicRoute from '../routes/PublicRoute';
+import MemoryContext from '../context/MemoryContext';
+import NewCharacter from '../NewCharacterPage/NewCharacter';
+import Landing from '../LandingPage/Landing';
+import NotFound from '../NotFound/NotFound';
+import RegistrationPage from '../RegistrationPage/RegistrationPage';
+import ExperienceLevel from '../ExperienceLevelPage/ExperienceLevel';
+import Game from '../GamePage/Game';
+import LoginPage from '../LoginPage/LoginPage';
+import HighScores from '../HighScoresPage/HighScores';
+import PlayerStats from '../PlayerStatsPage/PlayerStats';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
+import IdleService from '../../services/idle-service';
+import './app.css';
 
 class App extends React.Component {
   
@@ -30,14 +30,14 @@ class App extends React.Component {
       cardsForExperienceLevel:'',
     };
     
-  }
+  };
 
   componentDidMount(){
 /*
       set the function (callback) to call when a user goes idle
       we'll set this to logout a user when they're idle
     */
-   IdleService.setIdleCallback(this.logoutFromIdle)
+   IdleService.setIdleCallback(this.logoutFromIdle);
 
    /* if a user is logged in */
    if (TokenService.hasAuthToken()) {
@@ -47,7 +47,7 @@ class App extends React.Component {
        if the user doesn't trigger one of these event listeners,
          the idleCallback (logout) will be invoked
      */
-     IdleService.regiserIdleTimerResets()
+     IdleService.regiserIdleTimerResets();
 
      /*
        Tell the token service to read the JWT, looking at the exp value
@@ -55,61 +55,61 @@ class App extends React.Component {
      */
      TokenService.queueCallbackBeforeExpiry(() => {
        /* the timoue will call this callback just before the token expires */
-       AuthApiService.postRefreshToken()
+       AuthApiService.postRefreshToken();
      })
    }
-  }
+  };
 
 
   updateCurrentPlayerId=(newId)=>{
     this.setState({currentPlayerId:newId})
-  }
+  };
 
   updateToNewCharacterPage =()=> {
     this.setState({currentPage: 'newCharacterPage'})
-  }
+  };
 
   updateCardsForExperienceLevel=(cards)=>{
     this.setState({cardsForExperienceLevel: cards})
-  }
+  };
 
   updatePage = (page) => {
     this.setState({currentPage: page})
-  }
+  };
 
   updateCurrentPlayer = (name) => {
     this.setState({currentPlayer: name})
-  }
+  };
 
   updatePlayerExperienceLevel =(experience) => {
     this.setState({playerExperienceLevel : experience})
-  }
+  };
 
   componentWillUnmount(){
     /*
       when the app unmounts,
       stop the event listeners that auto logout (clear the token from storage)
     */
-    IdleService.unRegisterIdleResets()
+    IdleService.unRegisterIdleResets();
     /*
       and remove the refresh endpoint request
     */
-    TokenService.clearCallbackBeforeExpiry()
-  }
+    TokenService.clearCallbackBeforeExpiry();
+  };
 
   logoutFromIdle = () => {
     /* remove the token from localStorage */
-    TokenService.clearAuthToken()
+    TokenService.clearAuthToken();
     /* remove any queued calls to the refresh endpoint */
-    TokenService.clearCallbackBeforeExpiry()
+    TokenService.clearCallbackBeforeExpiry();
     /* remove the timeouts that auto logout when idle */
-    IdleService.unRegisterIdleResets()
+    IdleService.unRegisterIdleResets();
     /*
       react won't know the token has been removed from local storage,
       so we need to tell React to rerender
     */
-    this.forceUpdate()
-  }
+    this.forceUpdate();
+  };
 
   render(){
     const contextValue = {
@@ -121,7 +121,7 @@ class App extends React.Component {
       playerName:this.state.currentPlayer,
       updateCurrentPlayerId:this.updateCurrentPlayerId,
       playerId:this.state.currentPlayerId
-    }
+    };
 
   return(
     <div className='App'>
@@ -176,6 +176,6 @@ class App extends React.Component {
   )
 
   }
-}
+};
 
 export default App;

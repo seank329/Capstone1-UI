@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom'
-import CardMultiplier from './CardMultiplier'
+import CardMultiplier from './CardMultiplier';
 
 describe ('CardMultiplier component', () => {
 
@@ -13,5 +12,5 @@ describe ('CardMultiplier component', () => {
            , div
         )
         ReactDOM.unmountComponentAtNode(div);
-    })
-})
+    });
+});

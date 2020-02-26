@@ -1,5 +1,5 @@
-import jwtDecode from 'jwt-decode'
-import config from '../config'
+import jwtDecode from 'jwt-decode';
+import config from '../config';
 
 
 let _timeoutId
@@ -51,6 +51,6 @@ const TokenService = {
       clearCallbackBeforeExpiry() {
         clearTimeout(_timeoutId)
       },
-}
+};
 
-export default TokenService
+export default TokenService;

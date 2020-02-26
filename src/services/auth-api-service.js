@@ -1,6 +1,6 @@
-import config from '../config'
-import TokenService from './token-service'
-import IdleService from './idle-service'
+import config from '../config';
+import TokenService from './token-service';
+import IdleService from './idle-service';
 
 
 const AuthApiService = {
@@ -73,6 +73,6 @@ const AuthApiService = {
       console.error(err)
     })
 },
-}
+};
 
-export default AuthApiService
+export default AuthApiService;

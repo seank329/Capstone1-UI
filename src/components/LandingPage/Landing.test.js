@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from './Landing'
-import { BrowserRouter } from 'react-router-dom'
+import Landing from './Landing';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Landing page component', () => {
     
@@ -11,4 +11,4 @@ describe('Landing page component', () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-})
+});

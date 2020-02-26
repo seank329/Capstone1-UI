@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Game from './Game'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Game component', () => {
     
@@ -11,4 +11,4 @@ describe('Game component', () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-})
+});

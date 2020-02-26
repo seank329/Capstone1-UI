@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import MemoryContext from '../context/MemoryContext'
-import AuthApiService from '../../services/auth-api-service'
-import './loginPage.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import MemoryContext from '../context/MemoryContext';
+import AuthApiService from '../../services/auth-api-service';
+import './loginPage.css';
 
 /*
     The 'LoginPage' component diplays the login form, and displays the link for allowing users to register.
@@ -16,23 +16,23 @@ class LoginPage extends React.Component{
         userName : '',
         error : null,
         password: ''
-    }
+    };
 
     // Clear error notification after 2 seconds
     errorClear=()=>{
         if(this.state.error !== null){
             setTimeout(()=>{
                 this.setState({error:null})
-            },2000)
-        }
-    }
+            },2000);
+        };
+    };
     
     // Go back to the landing screen
     onLoginSuccess=()=>{
-            const { location, history } = this.props
-            const destination = (location.state || {}).from || '/'
-            history.push(destination)
-    }
+            const { location, history } = this.props;
+            const destination = (location.state || {}).from || '/';
+            history.push(destination);
+    };
 
     // Handle form submission.
     handleSubmit=(e)=>{
@@ -57,9 +57,9 @@ class LoginPage extends React.Component{
             .catch(res => {
                 this.setState({ error:res.error })
             })
-        }
+        };
         
-    }
+    };
     
     // Handles login form display
     render(){
@@ -88,9 +88,9 @@ class LoginPage extends React.Component{
                     </Link>  
                 </div>      
             </div>
-        )
-    }
+        );
+    };
 
-}
+};
 
-export default LoginPage
+export default LoginPage;

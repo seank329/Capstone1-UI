@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import MemoryApiService from '../../services/memory-api-service'
-import './highScores.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import MemoryApiService from '../../services/memory-api-service';
+import './highScores.css';
 
 
 /*
@@ -17,7 +17,7 @@ class HighScores extends React.Component{
         medium:{},
         hard:{},
         expert:{}
-    }
+    };
 
 
     // Api calls made for the database at each difficulty level
@@ -37,7 +37,7 @@ class HighScores extends React.Component{
             console.log(e)
         }
 
-    }
+    };
 
     // Converts the time in seconds to a more readable format
     showTime=(seconds)=>{
@@ -48,9 +48,9 @@ class HighScores extends React.Component{
         } else if(seconds > 0){
             return (seconds + ' seconds')
         } else {
-            return ('No Game Data For This Level')
+            return ('No Game Data For This Level');
         }
-    }
+    };
 
 
     render(){
@@ -83,8 +83,8 @@ class HighScores extends React.Component{
             </div>
         )
 
-    }
+    };
 
-}
+};
 
-export default HighScores
+export default HighScores;

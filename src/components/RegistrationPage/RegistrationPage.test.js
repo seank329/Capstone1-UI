@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RegistrationPage from './RegistrationPage'
-import { BrowserRouter } from 'react-router-dom'
+import RegistrationPage from './RegistrationPage';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('RegistrationPage component', () => {
     
@@ -11,4 +11,4 @@ describe('RegistrationPage component', () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-})
+});

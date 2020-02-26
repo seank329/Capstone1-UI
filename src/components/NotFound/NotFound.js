@@ -1,6 +1,6 @@
 import React, { Component, Children } from 'react';
 import { withRouter } from 'react-router-dom';
-import './notFound.css'
+import './notFound.css';
 
 
 /*
@@ -10,7 +10,7 @@ class NotFound extends Component {
 
   componentDidMount(){
     document.title = 'Page Not Found'
-  }
+  };
   
   render() {
     return (

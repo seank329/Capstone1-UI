@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NewCharacter from './NewCharacter'
-import { BrowserRouter } from 'react-router-dom'
+import NewCharacter from './NewCharacter';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('NewCharacter component', () => {
     
@@ -11,4 +11,4 @@ describe('NewCharacter component', () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-})
+});

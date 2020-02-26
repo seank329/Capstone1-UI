@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom' 
-import MemoryContext from '../context/MemoryContext'
-import MemoryApiService from '../../services/memory-api-service'
-import './playerStats.css'
+import React from 'react';
+import { Link } from 'react-router-dom' ;
+import MemoryContext from '../context/MemoryContext';
+import MemoryApiService from '../../services/memory-api-service';
+import './playerStats.css';
 
 /*
     The 'PlayerStats' component render function displays the player statistics if the player is logged in.
@@ -21,7 +21,7 @@ class PlayerStats extends React.Component {
         medium:0,
         hard:0,
         expert:0
-    }
+    };
 
     // Makes calls to the API service to get the player statistics and load them into state.
     componentDidMount(){
@@ -41,25 +41,25 @@ class PlayerStats extends React.Component {
                     })
                     //return data
                 })
-            },600)
+            },600);
         } catch(err) {
                 console.log(err)
         }
 
-    }
+    };
 
     // Converts the time in seconds to a more readable format
     showTime=(seconds)=>{
         if(seconds>60){
-            let minutes = Math.floor(seconds/60)
-            let minSeconds = Math.floor(seconds%60)
-            return(minutes + " minutes " + minSeconds + " seconds")
+            let minutes = Math.floor(seconds/60);
+            let minSeconds = Math.floor(seconds%60);
+            return(minutes + " minutes " + minSeconds + " seconds");
         } else if(seconds > 0){
-            return (seconds + ' seconds')
+            return (seconds + ' seconds');
         } else {
-            return ('No Game Data For This Level')
+            return ('No Game Data For This Level');
         }
-    }
+    };
 
     // Display for player statistics
     render(){
@@ -79,8 +79,8 @@ class PlayerStats extends React.Component {
                     <button type='button'>Back to Main Page</button>
                 </Link>   
             </div>
-        )
-    }
+        );
+    };
 
-}
-export default PlayerStats
+};
+export default PlayerStats;

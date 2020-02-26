@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 /*
     Transport for data needed globally.
@@ -13,6 +13,6 @@ const MemoryContext = React.createContext({
     playerName:'',
     updateCurrentPlayerId: ()=> {},
     playerId:'',
-})
+});
 
-export default MemoryContext
+export default MemoryContext;

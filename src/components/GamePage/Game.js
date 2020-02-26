@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import MemoryContext from '../context/MemoryContext'
-import { Link } from 'react-router-dom'
-import { format } from 'date-fns'
-import MemoryApiService from '../../services/memory-api-service'
-import CardMultiplier from '../CardMultiplier/CardMultiplier'
-import './game.css'
+import React, { Component } from 'react';
+import MemoryContext from '../context/MemoryContext';
+import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
+import MemoryApiService from '../../services/memory-api-service';
+import CardMultiplier from '../CardMultiplier/CardMultiplier';
+import './game.css';
 
 
 /*
@@ -38,15 +38,15 @@ class Game extends Component{
             timeSet:false,
             display:'',
             quickestTime:{},
-        }
+        };
        this.updateCardsInPlay=this.updateCardsInPlay.bind(this)
        this.updateStateOfReveal=this.updateStateOfReveal.bind(this)
-    }
+    };
 
     // For timer display. Activated at the click of the first card.
     updateStateTimer=(time)=>{
         this.setState({timer:time})
-    }
+    };
 
     // Loads the quickest time for the current level from a previous game if the user is logged in.
     componentDidMount(){
@@ -87,15 +87,15 @@ class Game extends Component{
 
                 }
             }
-        },500)
-    }
+        },500);
+    };
 
 
     updateCardsInPlay=(cardArray)=>{
         if(this.state.cardsInPlay.length === 1){
             this.setState({cardsInPlay:cardArray})
-        }
-    }
+        };
+    };
 
     // Logic for determining what happens when the user clicks on a card
     updateStateOfReveal=(index)=> {
@@ -133,13 +133,15 @@ class Game extends Component{
                 
             }
         }
-    }   
+    };
 
     // Determines what happens after both cards have been flipped upright, and checks for match
     componentDidUpdate(){
-        let temp = [...this.state.cardsInPlay]
-        let x = this.state.image1.id
-        let y = this.state.image2.id
+
+        let temp = [...this.state.cardsInPlay];
+        let x = this.state.image1.id;
+        let y = this.state.image2.id;
+
         if(this.state.image1!==''){
             if(this.state.image1.image===this.state.image2.image){
                 this.setState(prevState=> ({
@@ -160,11 +162,11 @@ class Game extends Component{
                                     image1:'',
                                     image2:'',
                                 cardsAreRevealed:false})
-                    }, 700)
+                    }, 700);
                 }
-            }
+            };
 
-        }
+        };
         // If the game is over
         if((this.state.idsNotInPlay.length === this.state.cardsInPlay.length) && this.state.cardsInPlay.length>1) {
             if(!this.state.won){
@@ -175,24 +177,24 @@ class Game extends Component{
                 this.setState({
                               timeElapsed:seconds
                     })
-                },500)
+                },500);
 
                 setTimeout(()=>{this.gameOver()},500)
             }
              
-         }
-    }
+         };
+    };
 
     // Handles what happens when a card has been clicked
     handleClick=(e)=>{
         e.preventDefault();
         if(!this.state.gameStart){
             this.setState({timerStart:Date.now(),
-                            gameStart:true})
-        }
+                            gameStart:true});
+        };
         let index = e.target.id
         this.updateStateOfReveal(index)
-    }
+    };
 
     // Determines the elapsed time of the game, from the moment the first card has been flipped, to the 
     // last match made for completion.
@@ -205,7 +207,7 @@ class Game extends Component{
         } else {
             return (seconds + ' seconds')
         }
-    }
+    };
 
     // Called by render to show details of the time elapsed.
     display=()=>{
@@ -222,7 +224,7 @@ class Game extends Component{
                 <div></div>
             )
         }
-    }
+    };
 
     // Makes calls to the 'MemoryApiService' on game completion if the user is logged in to update the database
     gameOver=()=>{
@@ -240,7 +242,7 @@ class Game extends Component{
             }
             count++
         }
-    }
+    };
 
     render(){
 
@@ -263,8 +265,8 @@ class Game extends Component{
                 </div>
             </div>
         )
-    }
+    };
 
-}
+};
 
-export default Game
+export default Game;

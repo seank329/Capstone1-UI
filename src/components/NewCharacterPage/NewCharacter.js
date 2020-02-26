@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './newCharacter.css'
+import './newCharacter.css';
 
 /*
     The 'NewCharacter' component renders a display shown generally after the landing page if the user 
@@ -15,12 +15,12 @@ class NewCharacter extends React.Component {
             currentPlayer:'',
             namesSet:false
         };
-    }
+    };
 
     // Continue as a guest and to the experience level page
     handleGuestAccess=()=>{
-        this.setState({currentPlayer:'Guest'})
-    }
+        this.setState({currentPlayer:'Guest'});
+    };
 
     // Display shows links for playing the game as a guest, or logging in
     render(){
@@ -38,8 +38,8 @@ class NewCharacter extends React.Component {
                 </form>
                 <h5>By registering and logging in, you get to save your progress!</h5>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
-export default NewCharacter
+export default NewCharacter;

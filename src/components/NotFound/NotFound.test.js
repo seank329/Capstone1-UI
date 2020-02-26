@@ -11,4 +11,4 @@ describe('NotFound component', () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-})
+});

@@ -1,5 +1,5 @@
 import React from 'react';
-import './card.css'
+import './card.css';
 
 
 /*
@@ -15,7 +15,7 @@ class Card extends React.Component{
           if (this.props.id===this.props.notInPlay[i]){ 
             return this.props.inPlay[this.props.id].image
           }
-      } 
+      }; 
       if(this.props.id === this.props.image1.id){
            return this.props.image1.image
        } else if (this.props.id === this.props.image2.id)

@@ -1,8 +1,8 @@
 /* eslint-disable default-case */
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import MemoryContext from '../context/MemoryContext'
-import './experienceLevel.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import MemoryContext from '../context/MemoryContext';
+import './experienceLevel.css';
 
 /*
     The 'ExperienceLevel' component gets the player's desired level of play from a drop-down menu. The number
@@ -43,7 +43,7 @@ class ExperienceLevel extends Component {
         }
         this.context.updateCardsForExperienceLevel(cards)
         this.setState({selected:true})
-    }
+    };
     
     // Select option drop-down for difficulty level
     render(props) {
@@ -61,8 +61,8 @@ class ExperienceLevel extends Component {
                 {this.state.selected===true? <Link to='/game'><button type='button' id='continueButton'>Continue</button></Link> : null}
             </div>
         )
-    }
+    };
 
-}
+};
 
 export default ExperienceLevel;

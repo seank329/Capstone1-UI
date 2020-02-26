@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HighScores from './HighScores'
-import { BrowserRouter } from 'react-router-dom'
+import HighScores from './HighScores';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('HighScores component', () => {
     
@@ -11,4 +11,4 @@ describe('HighScores component', () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-})
+});
