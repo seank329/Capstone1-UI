@@ -23,7 +23,7 @@ class LoginPage extends React.Component{
         if(this.state.error !== null){
             setTimeout(()=>{
                 this.setState({error:null})
-            },2000);
+            },3000);
         };
     };
     
